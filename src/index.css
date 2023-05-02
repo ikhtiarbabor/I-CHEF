@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+*:focus {
+  outline: none;
+}
+#root {
+  font-family: 'Raleway', sans-serif;
+}
+.btn-grad,
+.btn-home {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #dd2476 51%,
+    #ff512f 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: 0;
+}
+
+.btn-grad:hover,
+btn-home:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-home {
+  padding: 10px 30px;
+}
+.awssld__container {
+  padding: 0 !important;
+  height: 500px !important;
+}
+.allPageBannerImage {
+  background-position: center !important;
+  background-size: cover !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  background-blend-mode: multiply !important;
+}
+.navbar-collapse {
+  flex-grow: 0 !important;
+}
+.logo {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#ff512f, #dd2476, #ff512f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  padding: 0;
+}
+.nav-link {
+  padding: 15px 20px;
+}
+.active {
+  background: -webkit-linear-gradient(#ff512f, #dd2476, #ff512f);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 900 !important;
+}
+.login-form:focus:hover {
+  border-bottom: 1px solid #dd2476;
+}
