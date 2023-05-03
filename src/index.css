@@ -49,13 +49,24 @@ btn-home:hover {
 .navbar-collapse {
   flex-grow: 0 !important;
 }
-.logo {
-  font-size: 72px;
+.logo,
+.foot_logo {
+  font-size: 60px;
   background: -webkit-linear-gradient(#ff512f, #dd2476, #ff512f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
   padding: 0;
+}
+.foot_logo {
+  font-size: 36px;
+}
+.subscribe {
+  font-size: 30px;
+  font-weight: 900;
+}
+.subscribe-btn {
+  box-shadow: 0 0 20px transparent;
 }
 .nav-link {
   padding: 15px 20px;
