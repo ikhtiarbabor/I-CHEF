@@ -101,3 +101,9 @@ btn-home:hover {
   margin-bottom: 50px;
   padding-top: 50px;
 }
+.link-color {
+  background: -webkit-linear-gradient(#ff512f, #dd2476, #ff512f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0;
+}

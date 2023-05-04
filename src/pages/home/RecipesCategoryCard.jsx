@@ -4,10 +4,13 @@ import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaHeart, FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RecipesCategoryCard = ({ recipeData }) => {
   const { strMeal, rating } = recipeData;
   const [react, setReact] = useState(false);
   const handleReact = () => {
+    toast('❤️ You React This Food');
     setReact(true);
   };
 
@@ -21,13 +24,19 @@ const RecipesCategoryCard = ({ recipeData }) => {
           <div className='category'>
             <Link
               to={`http://localhost:5173/recipe/${recipeData?.chef_code}`}
-              className='btn-home text-decoration-none'
+              className='btn-home text-decoration-none text-white'
             >
               See This Category
             </Link>
           </div>
           <div className='title-product'>
             <h3>{strMeal}</h3>
+            <Link
+              className='link-color'
+              to={`/recipes/how_to_cook/${recipeData?.chef_code}`}
+            >
+              Do you want to see the cooking method?
+            </Link>
           </div>
           <div className='card-footer'>
             <div className='wcf-left'>

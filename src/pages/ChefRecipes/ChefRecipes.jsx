@@ -8,7 +8,7 @@ const ChefRecipes = () => {
   const chefRecipes = useLoaderData();
   const id = chefRecipes?.[0]?.chef_code;
   useEffect(() => {
-    fetch(`https://assignment-10-server-kappa-six.vercel.app/chef/${id}`)
+    fetch(`https://assignment-10-server-ikhtiarbabor.vercel.app/chef/${id}`)
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
@@ -46,7 +46,10 @@ const ChefRecipes = () => {
                     <div>
                       <h4>{rec.strMeal}</h4>
                       <p>{rec.strInstructions}</p>
-                      <Link className='text-decoration-none'>
+                      <Link
+                        to={`http://localhost:5173/recipes/how_to_cook/${rec.chef_code}`}
+                        className='text-decoration-none'
+                      >
                         <button className='btn-grad'>How To Cook Recipe</button>
                       </Link>
                     </div>

@@ -7,11 +7,11 @@ import { Row } from 'react-bootstrap';
 const CategoryFood = () => {
   const { category } = useContext(FoodContext);
   const filterData = FetchData(
-    `https://assignment-10-server-kappa-six.vercel.app/recipes/category/${category}`,
+    `https://assignment-10-server-ikhtiarbabor.vercel.app/recipes/category/${category}`,
     category
   );
   console.log(
-    `https://assignment-10-server-kappa-six.vercel.app/recipes/category/${category}`
+    `https://assignment-10-server-ikhtiarbabor.vercel.app/recipes/category/${category}`
   );
   console.log(filterData);
   return (

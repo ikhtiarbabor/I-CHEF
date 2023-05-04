@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import PageBanner from '../../shared/PageBanner';
+import { Container } from 'react-bootstrap';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub, FaEye, FaEyeSlash, FaLock } from 'react-icons/fa';
 import { AiTwotoneMail } from 'react-icons/ai';
@@ -11,11 +10,9 @@ const Login = () => {
   const { signInGoogle, setUser, loginUser, user } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const location = useLocation();
-  console.log(location);
   const backNav = useNavigate();
-  const from = location.state || '/';
+  const from = location?.state || '/';
   console.log(from);
-  console.log(location);
   const [error, setError] = useState('');
   const handleShowPass = () => {
     setShowPass(!showPass);
@@ -23,9 +20,7 @@ const Login = () => {
   const handleLoginGoogle = () => {
     signInGoogle()
       .then((result) => {
-        const user = result.user;
-
-        setUser(user);
+        backNav(from);
       })
       .catch((err) => {
         console.log(err);
@@ -38,8 +33,6 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then((result) => {
-        const user = result.user;
-        setUser(user);
         backNav(from);
       })
       .catch((err) => {
@@ -49,7 +42,7 @@ const Login = () => {
   return (
     <>
       {user ? (
-        <Navigate to='/'></Navigate>
+        <Navigate to={from}></Navigate>
       ) : (
         <Container className='mx-auto flex justify-content-center'>
           <div className='text-center py-5 w-25 mx-auto'>

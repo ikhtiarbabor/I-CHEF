@@ -64,8 +64,8 @@ const Header = () => {
                   className='ps-3'
                 >
                   <Link className='nav-link'>Profile</Link>
-                  <Link className='nav-link'>Another action</Link>
-                  <Link className='nav-link'>Something</Link>
+                  <Link className='nav-link'>Dashboard</Link>
+                  <Link className='nav-link'>Activity</Link>
                   <NavDropdown.Divider />
                   <button className='btn-home' onClick={handleLogout}>
                     Logout

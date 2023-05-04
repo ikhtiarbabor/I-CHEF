@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AllChef = ({ allChef }) => {
@@ -22,7 +23,7 @@ const AllChef = ({ allChef }) => {
       <Container>
         <h2 className='text-center pb-3'>Our Chef</h2>
         <Row className='justify-content-center'>
-          {(!see ? allChef.slice(0, 4) : allChef).map((chef) => (
+          {(!see ? allChef.slice(0, 8) : allChef).map((chef) => (
             <Col key={chef.id} md={3} className='mb-5'>
               <Card>
                 <Card.Img variant='top' src={chef.image} />
@@ -38,12 +39,23 @@ const AllChef = ({ allChef }) => {
                       chef.details
                     )}
                   </Card.Text>
-                  <Link
-                    className='text-decoration-none'
-                    to={`/recipe/${chef.id}`}
-                  >
-                    <button className='btn-home'>See Recipe</button>
-                  </Link>
+                  <Row>
+                    <Col xs={8}>
+                      <Link
+                        className='text-decoration-none'
+                        to={`/recipe/${chef.id}`}
+                      >
+                        <button className='btn-home'>See Recipe</button>
+                      </Link>
+                    </Col>
+                    <Col xs={4}>
+                      <span>{chef.experience}</span> <br />
+                      <span>
+                        {chef.rating}/5{' '}
+                        <FaStar style={{ color: '#dd2476' }}></FaStar>
+                      </span>
+                    </Col>
+                  </Row>
                 </Card.Body>
               </Card>
             </Col>

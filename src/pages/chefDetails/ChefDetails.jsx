@@ -1,12 +1,15 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import ChefBanner from './ChefBanner';
-import { Rating } from '@smastrom/react-rating';
+import { FaRegStar, FaStar } from 'react-icons/fa';
+import Rating from 'react-rating';
 
 const ChefDetails = () => {
   const chefDetails = useLoaderData();
-  const { details, rating, restaurant, name, id } = chefDetails;
+  const { details, rating, restaurant, name, id, experience, recipes } =
+    chefDetails;
+  console.log(chefDetails);
   return (
     <>
       <ChefBanner chefDetails={chefDetails}></ChefBanner>
@@ -34,13 +37,21 @@ const ChefDetails = () => {
               <Col xs={6}>{name}</Col>
               <Col xs={6}>Ratings</Col>
               <Col xs={6}>
-                <Rating
-                  style={{ maxWidth: 20 }}
-                  value={3}
-                  orientation='horizontal'
-                  readOnly
-                />
+                <p style={{ color: '#FFD700' }}>
+                  <Rating
+                    placeholderRating={rating}
+                    emptySymbol={<FaRegStar></FaRegStar>}
+                    placeholderSymbol={<FaStar></FaStar>}
+                    fullSymbol={<FaStar></FaStar>}
+                    className='Icon fs-4'
+                    readonly
+                  />
+                </p>
               </Col>
+              <Col md={6}>Experience</Col>
+              <Col md={6}>{experience}</Col>
+              <Col md={6}>Recipes</Col>
+              <Col md={6}>{recipes}</Col>
             </div>
           </Col>
         </Row>

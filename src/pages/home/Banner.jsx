@@ -9,7 +9,7 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const Banner = () => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch(`https://assignment-10-server-kappa-six.vercel.app/recipes`)
+    fetch(`https://assignment-10-server-ikhtiarbabor.vercel.app/recipes`)
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);

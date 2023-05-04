@@ -35,6 +35,8 @@ const Register = () => {
       return setErr('You Must Add A capital letter');
     } else if (!specialChar) {
       return setErr('You Must Add A special character');
+    } else if (password < 6) {
+      return setErr('Need At Least 6 Character');
     } else {
       okPassword = password;
       setErr('');
@@ -47,7 +49,7 @@ const Register = () => {
         setUser(result.user);
       })
       .catch((err) => {
-        console.log(err);
+        setErr(err.message);
       });
   };
   return (

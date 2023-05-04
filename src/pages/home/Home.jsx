@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
-import AllChef from './AllChef';
 import OurReview from './OurReview';
-import RecipeCategory from './RecipeCategory';
 import CategoryLayout from '../../Layout/CategoryLayout';
 import BestRecipe from './BestRecipe';
+import Loader from '../loader/Loader';
+const AllChef = lazy(() => import('./AllChef'));
 
 const Home = () => {
   const allChef = useLoaderData();
@@ -14,7 +14,9 @@ const Home = () => {
       <Banner></Banner>
       <CategoryLayout></CategoryLayout>
       <BestRecipe></BestRecipe>
-      <AllChef allChef={allChef}></AllChef>
+      <Suspense fallback={<Loader></Loader>}>
+        <AllChef allChef={allChef}></AllChef>
+      </Suspense>
       <OurReview allChef={allChef}></OurReview>
     </>
   );
