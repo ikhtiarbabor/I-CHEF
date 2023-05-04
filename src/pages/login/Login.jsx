@@ -7,7 +7,8 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
-  const { signInGoogle, setUser, loginUser, user } = useContext(AuthContext);
+  const { signInGoogle, setUser, loginUser, user, signGithub } =
+    useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const location = useLocation();
   const backNav = useNavigate();
@@ -19,6 +20,15 @@ const Login = () => {
   };
   const handleLoginGoogle = () => {
     signInGoogle()
+      .then((result) => {
+        backNav(from);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const handleLoginGithub = () => {
+    signGithub()
       .then((result) => {
         backNav(from);
       })
@@ -67,10 +77,11 @@ const Login = () => {
                 color: 'black',
                 border: '1px solid #444',
               }}
+              onClick={handleLoginGithub}
               className='rounded text-capitalize py-1 w-100 mt-3'
             >
               <FaGithub className='fs-5'></FaGithub>{' '}
-              <span className='text-capitalize'>Log in with Google</span>
+              <span className='text-capitalize'>Log in with Github</span>
             </button>
           </div>
           <form action='' className='mx-auto w-25' onSubmit={handleLoginUser}>
