@@ -97,3 +97,7 @@ btn-home:hover {
 .awssld__content:hover .text-hover {
   display: block;
 }
+.section-gap {
+  margin-bottom: 50px;
+  padding-top: 50px;
+}

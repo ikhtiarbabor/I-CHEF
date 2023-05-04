@@ -12,18 +12,20 @@ const CategoryLayout = () => {
   };
   return (
     <FoodContext.Provider value={foodInfo}>
-      <Container>
-        <h2 className='text-center'>Recipe Catagories</h2>
-        <Row className='flex-column-reverse flex-md-row'>
-          <Col md={9}>
-            <CategoryFood></CategoryFood>
-          </Col>
-          <Col md={3} className='d-flex flex-column justify-content-center'>
-            <h4 className='text-center align-items-baseline'>Categories</h4>
-            <RecipeCategory></RecipeCategory>
-          </Col>
-        </Row>
-      </Container>
+      <section className='section-gap'>
+        <Container>
+          <h2 className='text-center'>Recipe Catagories</h2>
+          <Row className='flex-column-reverse flex-md-row'>
+            <Col md={9}>
+              <CategoryFood></CategoryFood>
+            </Col>
+            <Col md={3} className='d-flex flex-column justify-content-center'>
+              <h4 className='text-center align-items-baseline'>Categories</h4>
+              <RecipeCategory></RecipeCategory>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </FoodContext.Provider>
   );
 };

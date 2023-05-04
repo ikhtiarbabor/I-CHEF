@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:2000/'),
+        loader: () =>
+          fetch('https://assignment-10-server-kappa-six.vercel.app/'),
       },
       {
         path: '/login',
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
         path: 'chef/:id',
         element: <ChefDetails></ChefDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:2000/chef/${params.id}`),
+          fetch(
+            `https://assignment-10-server-kappa-six.vercel.app/chef/${params.id}`
+          ),
       },
       {
         path: '/recipe/:chef_code',
@@ -46,7 +49,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:2000/recipes/${params.chef_code}`),
+          fetch(
+            `https://assignment-10-server-kappa-six.vercel.app/recipes/${params.chef_code}`
+          ),
       },
     ],
   },

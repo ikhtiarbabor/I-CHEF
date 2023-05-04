@@ -4,7 +4,7 @@ import preloader from '../../assets/preloader.gif';
 
 const Loader = () => {
   return (
-    <Container className='mx-auto'>
+    <Container className='mx-auto py-5 mb-5'>
       <div className='w-50 mx-auto h-100 d-flex align-items-center justify-content-center'>
         <img src={preloader} alt='' />
       </div>

@@ -9,7 +9,7 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const Banner = () => {
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:2000/recipes`)
+    fetch(`https://assignment-10-server-kappa-six.vercel.app/recipes`)
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);
@@ -47,7 +47,9 @@ const Banner = () => {
                 className='Icon fs-4'
                 readonly
               />
-              <span className='text-black ps-1'>{recipe?.rating || 0}/5</span>
+              <span className='text-black ps-1'>
+                {recipe?.rating || Math.floor(Math.random() * 4)}/5
+              </span>
             </p>
             <p className='px-4 text-hover'>
               The doner is a Turkish creation of meat, often lamb, but not

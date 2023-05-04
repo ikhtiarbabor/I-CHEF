@@ -33,7 +33,7 @@ const RecipesCategoryCard = ({ recipeData }) => {
             <div className='wcf-left'>
               <span className='price' style={{ color: '#FFD700' }}>
                 <Rating
-                  placeholderRating={rating || 0}
+                  placeholderRating={rating || Math.floor(Math.random() * 4)}
                   emptySymbol={<FaRegStar></FaRegStar>}
                   placeholderSymbol={<FaStar></FaStar>}
                   fullSymbol={<FaStar></FaStar>}

@@ -9,7 +9,9 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const OurReview = ({ allChef }) => {
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   return (
-    <section>
+    <section
+      
+    >
       <h2 className='text-center'>Our Recipe Reviews</h2>
       <Container>
         <AutoplaySlider
@@ -21,7 +23,7 @@ const OurReview = ({ allChef }) => {
         >
           {allChef.map((chef, i) => (
             <div
-              className='w-75 text-center border py-5 px-6'
+              className='w-75 text-center border-0 py-5 px-6'
               style={{
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
@@ -37,14 +39,7 @@ const OurReview = ({ allChef }) => {
                   backgroundSize: 'cover',
                 }}
                 className='mx-auto rounded-circle'
-              >
-                {/* <img
-                  src={chef.image}
-                  alt=''
-                  className='w-100 rounded-circle h-100'
-                  style={{ maxWidth: '180px', height: '180px' }}
-                /> */}
-              </p>
+              ></p>
               <h5 className='pt-2 fs-bold'>{chef.name}</h5>
 
               <p>{chef.details}</p>

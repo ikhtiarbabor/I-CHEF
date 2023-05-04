@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const AllChef = ({ allChef }) => {
@@ -8,17 +8,27 @@ const AllChef = ({ allChef }) => {
     setSee(!see);
   };
   return (
-    <>
+    <section
+      className='section-gap'
+      style={{
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundColor: 'rgba(0,0,0,.5)',
+
+        backgroundBlendMode: 'multiply',
+        background: `url(${'https://webdesign-finder.com/kruton/wp-content/uploads/2018/11/background-form.jpg'})`,
+      }}
+    >
       <Container>
-        <h2>Our Chef</h2>
+        <h2 className='text-center pb-3'>Our Chef</h2>
         <Row className='justify-content-center'>
-          {(!see ? allChef.slice(0, 6) : allChef).map((chef) => (
-            <Col key={chef.id} md={4} className='mb-5'>
+          {(!see ? allChef.slice(0, 4) : allChef).map((chef) => (
+            <Col key={chef.id} md={3} className='mb-5'>
               <Card>
                 <Card.Img variant='top' src={chef.image} />
                 <Card.Body>
                   <Card.Title>{chef.name}</Card.Title>
-                  <Card.Text>
+                  <Card.Text className='text-black'>
                     {chef.details.length > 100 ? (
                       <>
                         {chef.details.slice(0, 100)}...
@@ -46,7 +56,7 @@ const AllChef = ({ allChef }) => {
           </button>
         </div>
       </Container>
-    </>
+    </section>
   );
 };
 

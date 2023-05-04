@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 import { FoodContext } from '../../Layout/CategoryLayout';
 
 const RecipeCategory = () => {
   const { setCategory } = useContext(FoodContext);
+
   const handleCategory = (text) => {
     setCategory(text);
+   
   };
 
   return (
@@ -13,7 +15,7 @@ const RecipeCategory = () => {
       <ListGroup variant='flush'>
         <ListGroup.Item>
           <button
-            className='bg-transparent border-0'
+            className={`bg-transparent border-0`}
             onClick={() => handleCategory('Breakfast')}
           >
             Breakfast

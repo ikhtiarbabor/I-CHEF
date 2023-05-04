@@ -8,7 +8,7 @@ const ChefRecipes = () => {
   const chefRecipes = useLoaderData();
   const id = chefRecipes?.[0]?.chef_code;
   useEffect(() => {
-    fetch(`http://localhost:2000/chef/${id}`)
+    fetch(`https://assignment-10-server-kappa-six.vercel.app/chef/${id}`)
       .then((res) => res.json())
       .then((data) => setChef(data));
   }, []);
