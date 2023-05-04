@@ -80,3 +80,20 @@ btn-home:hover {
 .login-form:focus:hover {
   border-bottom: 1px solid #dd2476;
 }
+.awssld__timer--animated,
+.awssld__timer {
+  background-color: transparent !important;
+}
+.text-color {
+  color: #dd2476;
+}
+.awssld__content {
+  transition: 0.06s ease-in-out !important;
+}
+.text-hover {
+  display: none;
+  transition: 0.06s ease-in-out !important;
+}
+.awssld__content:hover .text-hover {
+  display: block;
+}
