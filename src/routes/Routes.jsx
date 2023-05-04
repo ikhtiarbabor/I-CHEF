@@ -8,6 +8,10 @@ import ChefDetails from '../pages/chefDetails/ChefDetails';
 import ChefRecipes from '../pages/ChefRecipes/ChefRecipes';
 import Register from '../pages/register/Register';
 import PrivateRoute from './PrivateRoute';
+import RecipeCategory from '../pages/home/RecipeCategory';
+import RecipesCategoryCard from '../pages/home/RecipesCategoryCard';
+import CategoryFood from '../pages/home/CategoryFood';
+import CategoryLayout from '../Layout/CategoryLayout';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +39,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:2000/chef/${params.id}`),
       },
       {
-        path: '/recipes/:chef_code',
+        path: '/recipe/:chef_code',
         element: (
           <PrivateRoute>
             <ChefRecipes></ChefRecipes>

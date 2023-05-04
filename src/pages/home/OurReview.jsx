@@ -7,7 +7,6 @@ import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const OurReview = ({ allChef }) => {
-  console.log(allChef);
   const AutoplaySlider = withAutoplay(AwesomeSlider);
   return (
     <section>
@@ -30,15 +29,21 @@ const OurReview = ({ allChef }) => {
               }}
             >
               <p
-                style={{ maxWidth: '180px', height: '140px' }}
+                style={{
+                  width: '180px',
+                  height: `180px`,
+                  backgroundImage: `url(${chef.image})`,
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                }}
                 className='mx-auto rounded-circle'
               >
-                <img
+                {/* <img
                   src={chef.image}
                   alt=''
                   className='w-100 rounded-circle h-100'
                   style={{ maxWidth: '180px', height: '180px' }}
-                />
+                /> */}
               </p>
               <h5 className='pt-2 fs-bold'>{chef.name}</h5>
 

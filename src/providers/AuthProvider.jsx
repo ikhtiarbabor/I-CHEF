@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
     });
     return () => unSubscriber();
   }, []);
-  console.log(user);
+
 
   const authInfo = {
     signInGoogle,

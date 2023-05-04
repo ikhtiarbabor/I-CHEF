@@ -30,7 +30,7 @@ const AllChef = ({ allChef }) => {
                   </Card.Text>
                   <Link
                     className='text-decoration-none'
-                    to={`/recipes/${chef.id}`}
+                    to={`/recipe/${chef.id}`}
                   >
                     <button className='btn-home'>See Recipe</button>
                   </Link>
