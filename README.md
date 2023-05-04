@@ -41,4 +41,4 @@ This is also contributions by me
 
 Live Link : https://i-chef-assignment-10.web.app/
 
-- Go check it out the here this link :
+- server Side : https://assignment-10-server-ikhtiarbabor.vercel.app/
