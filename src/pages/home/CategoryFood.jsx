@@ -10,10 +10,7 @@ const CategoryFood = () => {
     `https://assignment-10-server-ikhtiarbabor.vercel.app/recipes/category/${category}`,
     category
   );
-  console.log(
-    `https://assignment-10-server-ikhtiarbabor.vercel.app/recipes/category/${category}`
-  );
-  console.log(filterData);
+
   return (
     <Row>
       {filterData?.slice(0, 3).map((fD) => (
@@ -22,7 +19,6 @@ const CategoryFood = () => {
           key={fD.idMeal}
         ></RecipesCategoryCard>
       ))}
-      ;
     </Row>
   );
 };

@@ -23,7 +23,7 @@ const RecipesCategoryCard = ({ recipeData }) => {
         <div className='wsk-cp-text'>
           <div className='category'>
             <Link
-              to={`http://localhost:5173/recipe/${recipeData?.chef_code}`}
+              to={`/recipe/${recipeData?.chef_code}`}
               className='btn-home text-decoration-none text-white'
             >
               See This Category
@@ -42,7 +42,7 @@ const RecipesCategoryCard = ({ recipeData }) => {
             <div className='wcf-left'>
               <span className='price' style={{ color: '#FFD700' }}>
                 <Rating
-                  placeholderRating={rating || Math.floor(Math.random() * 4)}
+                  placeholderRating={rating || 4.3}
                   emptySymbol={<FaRegStar></FaRegStar>}
                   placeholderSymbol={<FaStar></FaStar>}
                   fullSymbol={<FaStar></FaStar>}

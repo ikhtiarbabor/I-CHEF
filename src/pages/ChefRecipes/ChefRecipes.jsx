@@ -47,7 +47,7 @@ const ChefRecipes = () => {
                       <h4>{rec.strMeal}</h4>
                       <p>{rec.strInstructions}</p>
                       <Link
-                        to={`http://localhost:5173/recipes/how_to_cook/${rec.chef_code}`}
+                        to={`/recipes/how_to_cook/${rec.chef_code}`}
                         className='text-decoration-none'
                       >
                         <button className='btn-grad'>How To Cook Recipe</button>
@@ -66,7 +66,10 @@ const ChefRecipes = () => {
                     <div>
                       <h4>{rec.strMeal}</h4>
                       <p>{rec.strInstructions}</p>
-                      <Link className='text-decoration-none'>
+                      <Link
+                        to={`/recipes/how_to_cook/${rec.chef_code}`}
+                        className='text-decoration-none'
+                      >
                         <button className='btn-grad'>How To Cook Recipe</button>
                       </Link>
                     </div>

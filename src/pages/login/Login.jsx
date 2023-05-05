@@ -13,7 +13,6 @@ const Login = () => {
   const location = useLocation();
   const backNav = useNavigate();
   const from = location?.state || '/';
-  console.log(from);
   const [error, setError] = useState('');
   const handleShowPass = () => {
     setShowPass(!showPass);

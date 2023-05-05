@@ -48,7 +48,7 @@ const Banner = () => {
                 readonly
               />
               <span className='text-black ps-1'>
-                {recipe?.rating || Math.floor(Math.random() * 4)}/5
+                {recipe?.rating ||4.5}/5
               </span>
             </p>
             <p className='px-4 text-hover'>

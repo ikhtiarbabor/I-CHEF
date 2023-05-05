@@ -9,7 +9,7 @@ const ChefDetails = () => {
   const chefDetails = useLoaderData();
   const { details, rating, restaurant, name, id, experience, recipes } =
     chefDetails;
-  console.log(chefDetails);
+
   return (
     <>
       <ChefBanner chefDetails={chefDetails}></ChefBanner>
